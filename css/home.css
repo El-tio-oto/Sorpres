@@ -1,0 +1,319 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Scroll suave para anclas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body y tipografía */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  color: #4a2c3a;
+  padding-top: 60px; /* para que el nav no tape contenido */
+  text-align: center;
+}
+
+/* Navbar fijo arriba */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #e91e63;
+  padding: 0.75rem 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #c2185b;
+}
+
+/* Secciones */
+section {
+  background: white;
+  margin: 1.5rem auto;
+  max-width: 700px;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+  min-height: 70vh;
+}
+
+/* Títulos */
+section h1 {
+  font-size: 2.5rem;
+  color: #e91e63;
+  margin-bottom: 1.2rem;
+  text-shadow: 1px 1px 4px rgba(233, 30, 99, 0.5);
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+
+/* Párrafos */
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5e394b;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  section {
+    margin: 1rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  section h1 {
+    font-size: 1.8rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section p {
+    font-size: 1rem;
+  }
+}
+.galeria-seccion {
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.galeria-seccion h3 {
+  font-size: 1.6rem;
+  color: #e91e63;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(233, 30, 99, 0.6);
+}
+
+/* Reutilizamos el estilo chivísimo para la galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow:
+    0 8px 20px rgba(233, 30, 99, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+  filter: brightness(0.95) saturate(1.1);
+}
+
+.galeria img:hover {
+  transform: scale(1.08) rotate(2deg);
+  filter: brightness(1) saturate(1.3);
+  box-shadow:
+    0 15px 30px rgba(233, 30, 99, 0.5),
+    0 7px 15px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+#historia {
+  background: #fff0f6; /* tono rosa suave */
+  max-width: 700px;
+  margin: 2rem auto 3rem;
+  padding: 2rem 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+  font-family: 'Georgia', serif;
+  color: #5a2a44;
+  line-height: 1.7;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+/* Título sección */
+#historia h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #e91e63;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(233, 30, 99, 0.5);
+}
+
+/* Opcional: estilo para que el texto parezca una carta */
+#historia::before {
+  content: "Querida,";
+  font-family: 'Brush Script MT', cursive;
+  font-size: 1.8rem;
+  color: #e91e63;
+  position: absolute;
+  top: 1rem;
+  left: 2.5rem;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #historia {
+    padding: 1.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  #historia::before {
+    font-size: 1.5rem;
+    left: 1.5rem;
+  }
+
+  #historia h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Contenedor general de poemas */
+.poema {
+  background-color: #fff0f5;
+  padding: 2rem 2rem;
+  margin: 2rem auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.2);
+  max-width: 700px;
+  text-align: left;
+  font-family: 'Georgia', serif;
+  color: #5e2a4e;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+/* Título de cada poema */
+.poema h3 {
+  font-size: 1.8rem;
+  color: #e91e63;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(233, 30, 99, 0.4);
+}
+
+/* Texto de los poemas */
+.poema p {
+  font-size: 1.1rem;
+  white-space: pre-line;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .poema {
+    padding: 1.5rem 1rem;
+  }
+
+  .poema h3 {
+    font-size: 1.5rem;
+  }
+
+  .poema p {
+    font-size: 1rem;
+  }
+}
+.carta-final {
+  background-color: #fff8f9;
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.25);
+  max-width: 700px;
+  font-family: 'Georgia', serif;
+  color: #512b43;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  font-size: 1.1rem;
+  text-align: justify;
+  position: relative;
+}
+
+/* Título de la carta */
+#carta h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #e91e63;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(233, 30, 99, 0.5);
+}
+
+/* Firma al final */
+.carta-final strong {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  text-align: right;
+  color: #c2185b;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .carta-final {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  #carta h2 {
+    font-size: 1.8rem;
+  }
+}
+.carta-imagen {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.carta-imagen img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.carta-imagen img:hover {
+  transform: scale(1.03);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

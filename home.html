@@ -8,15 +8,18 @@
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#galeria">Galería</a></li>
-      <li><a href="#historia">Historia</a></li>
-      <li><a href="#poemas">Poemas</a></li>
-      <li><a href="#carta">Carta</a></li>
-    </ul>
-  </nav>
+  <nav class="navbar">
+  <div class="logo">💖 Mi Amor</div>
+  <button class="toggle" onclick="toggleMenu()">☰</button>
+  <ul class="menu" id="menu">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#poemas">Poemas</a></li>
+    <li><a href="#carta">Carta</a></li>
+  </ul>
+</nav>
+
 
 <div id="contador" class="fade-in" style="text-align:center; margin-top:2rem; font-size:1.2rem; color:#e91e63;"></div>
 
@@ -188,5 +191,10 @@ Desde ese momento, nuestra historia empezó a escribirse con momentos increíble
 
 <audio id="player" autoplay></audio>
 <script src="Javascript/home.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('show');
+  }
+</script>
 </body>
 </html>
